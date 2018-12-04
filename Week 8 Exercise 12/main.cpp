@@ -15,7 +15,6 @@ int main(int argc, char** argv)
 	int playerOneNumbers[numberLimit];
 
 	int playerTwoGuess = 0;
-	int playerTwoLives = 3;
 
 	cout << "Player 1, enter " << numberLimit << " whole numbers as prompted." << endl;
 
@@ -38,17 +37,13 @@ int main(int argc, char** argv)
 
 	bool playerTwoWin = false;
 
-	while (playerTwoLives > 0 && playerTwoWin == false)
+	for (count = 0; count < numberLimit; count++)
 	{
-		for (count = 0; count < numberLimit; count++)
+		if (playerTwoGuess == playerOneNumbers[count])
 		{
-			if (playerTwoGuess == playerOneNumbers[count])
-			{
-				playerTwoWin = true;
-			}
-
-
+			playerTwoWin = true;
 		}
+
 	}
 
 	if (playerTwoWin)
